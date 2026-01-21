@@ -107,6 +107,7 @@ export async function updateInvoice(
 }
 
 export async function deleteInvoice(id: string) {
+  // throw error 수정
   await sql`DELETE FROM invoices WHERE id = ${id}`;
   revalidatePath('/dashboard/invoices');
 }
